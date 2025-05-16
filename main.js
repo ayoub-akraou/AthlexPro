@@ -35,11 +35,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const bulletsClass = `.bullets${sliderNumber ? `-${sliderNumber}` : ""}`;
     const prevButtonId = `prev-slide${sliderNumber ? `-${sliderNumber}` : ""}`;
     const nextButtonId = `next-slide${sliderNumber ? `-${sliderNumber}` : ""}`;
-    
+
     // Éléments du slider
     const track = document.getElementById(trackId);
     if (!track) return; // Sortir si l'élément n'existe pas
-    
+
     const slides = Array.from(track.querySelectorAll(".slide"));
     const bullets = Array.from(document.querySelectorAll(`${bulletsClass} .bullet`));
     const prevButton = document.getElementById(prevButtonId);
@@ -115,19 +115,19 @@ document.addEventListener("DOMContentLoaded", function () {
     // Initialiser le slider au chargement
     updateSlider();
 
-    // Avancement automatique des diapositives
-    const autoPlayInterval = 5000; // 5 secondes
-    let slideInterval = setInterval(nextSlide, autoPlayInterval);
+    // // Avancement automatique des diapositives
+    // const autoPlayInterval = 5000; // 5 secondes
+    // let slideInterval = setInterval(nextSlide, autoPlayInterval);
 
-    // Mettre en pause la lecture automatique au survol
-    track.addEventListener("mouseenter", () => {
-      clearInterval(slideInterval);
-    });
+    // // Mettre en pause la lecture automatique au survol
+    // track.addEventListener("mouseenter", () => {
+    //   clearInterval(slideInterval);
+    // });
 
-    track.addEventListener("mouseleave", () => {
-      slideInterval = setInterval(nextSlide, autoPlayInterval);
-    });
-    
+    // track.addEventListener("mouseleave", () => {
+    //   slideInterval = setInterval(nextSlide, autoPlayInterval);
+    // });
+
     // Retourner un objet avec les fonctions et variables pour une utilisation externe si nécessaire
     return {
       goToSlide,
